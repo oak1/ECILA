@@ -1,6 +1,13 @@
-﻿using System.Collections;
+﻿/*
+ * 绑定在Follow Point上
+ * 给7个石头添加tag ： Rock01~Rock07
+ * Initial Position: 第一块石头的坐标
+ * Length: 路线长度
+ * width： 路线宽度
+ */
+
+using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 
 public class env_wallGenerator : MonoBehaviour {
@@ -89,7 +96,6 @@ public class env_wallGenerator : MonoBehaviour {
                 nextRock2 = GameObject.Instantiate(Rock_Wall_2C_06, lastPosition + GetRockHalfLength(Rock_Wall_2C_07) + GetRockHalfLength(lastRock) - new Vector3(width, 0, 0), initialRock.transform.rotation);
             }
             currentLength = currentLength + GetLength(nextRock1) * 2;
-            Console.WriteLine(currentLength);
             lastRock = nextRock1;
         }
         
